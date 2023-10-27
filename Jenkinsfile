@@ -35,7 +35,7 @@ pipeline{
 											}
 										}	
 						steps{	
-								sh " rm -rf * "
+								sh " sudo rm -rf * "
 								sh " sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.82/bin/apache-tomcat-9.0.82.zip"
 								sh " sudo unzip apache-tomcat-9.0.82.zip"
 								sh " sudo rm -rf apache-tomcat-9.0.82.zip"
@@ -50,7 +50,7 @@ pipeline{
 											}
 										}	
 						steps{	
-								sh " cp /home/ec2-user/demo/my-webapp-1.1.war /home/ec2-user/test/apache-tomcat-9.0.82/webapps/"
+								sh " sudo cp /home/ec2-user/demo/my-webapp-1.1.war /home/ec2-user/test/apache-tomcat-9.0.82/webapps/"
 								sh " sudo chown -R ec2-user:ec2-user /home/ec2-user/test/apache-tomcat-9.0.82"
 								sh " sudo /home/ec2-user/test/apache-tomcat-9.0.82/bin/./startup.sh"
 								
