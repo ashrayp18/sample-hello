@@ -17,10 +17,10 @@ pipeline{
 					}
 					stage('Build') {
 							steps{
-							dir('/root/demo/sample-hello-world-maven-project'){
+							dir('/root/demo/sample-hello'){
 									sh " mvn clean package"	
-									sh "scp  -i /root/test /root/demo/sample-hello-world-maven-project/target/my-webapp-1.1.war ec2-user@172.31.10.102:/home/ec2-user/demo/"
-									sh " cp /root/demo/sample-hello-world-maven-project/target/my-webapp-1.1.war /root/tools/tomcat/apache-tomcat-9.0.82/webapps"
+									sh "scp  -i /root/test /root/demo/sample-hello/target/my-webapp-1.1.war ec2-user@172.31.10.102:/home/ec2-user/demo/"
+									sh " cp /root/demo/sample-hello/target/my-webapp-1.1.war /root/tools/tomcat/apache-tomcat-9.0.82/webapps"
 									}
 								}	
 					
