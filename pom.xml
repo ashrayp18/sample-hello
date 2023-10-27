@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>my-webapp</artifactId>
+  <version>1.1</version>
+
+  <packaging>war</packaging>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <!-- SonarQube properties -->
+    <sonar.host.url>http://13.233.38.126:8090</sonar.host.url>
+    <sonar.login>sqp_9b115360e5e310fc90f671b664a8eaa542cb8adf</sonar.login>
+    <sonar.projectKey>Hello-World-app-test</sonar.projectKey>
+    <sonar.projectName>Hello-World-app-test</sonar.projectName>
+    <sonar.projectVersion>1.1</sonar.projectVersion>
+    <sonar.language>java</sonar.language>
+  </properties>
+
+<distributionManagement>
+
+  <repository>
+    <id>nexus-releases</id>
+    <url>http://13.233.38.126:8092/repository/hello-world-pkg/</url>
+  </repository>
+
+  <snapshotRepository>
+    <id>nexus-snapshots</id>
+    <url>http://13.233.38.126:8092/repository/hello-world-pkg-snapshot/</url>
+  </snapshotRepository>
+
+</distributionManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
